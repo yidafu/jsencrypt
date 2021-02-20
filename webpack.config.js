@@ -6,10 +6,12 @@ module.exports = {
     library: 'JSEncrypt',
     libraryTarget: 'umd',
     libraryExport: 'default',
-    globalObject: 'window',
+    // @see https://webpack.js.org/configuration/output/#outputglobalobject
+    globalObject: 'this',
     path: path.resolve(__dirname, 'bin'),
     filename: 'jsencrypt.js',
   },
+  target: ['es5'],
   mode: 'development',
   module: {
     rules: [
