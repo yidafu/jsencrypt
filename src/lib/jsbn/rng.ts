@@ -1,6 +1,20 @@
 // Random number generator - requires a PRNG backend, e.g. prng4.js
 import {Arcfour, prng_newstate, rng_psize} from "./prng4";
 
+
+var window: globalThis.Window = {
+  // @ts-ignore
+  ASN1: null,
+  // @ts-ignore
+  Base64: null,
+  // @ts-ignore
+  Hex: null,
+  // @ts-ignore
+  crypto: null,
+  // @ts-ignore
+  href: null
+}
+
 let rng_state:Arcfour;
 let rng_pool:number[] = null;
 let rng_pptr:number;
